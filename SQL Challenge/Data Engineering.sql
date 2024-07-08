@@ -1,6 +1,5 @@
 -- Had to create tables one by one while importing data for it to successfully import data
 
-
 -- Create all tables
 -- Create a table of titles
 CREATE TABLE Titles(
@@ -58,3 +57,8 @@ CREATE TABLE Salaries(
 	UNIQUE (emp_no),
 	PRIMARY KEY (emp_no)
 );
+
+-- Change 'date' format to MDY for the database
+-- The CSV named 'employees' has dates in MM-DD-YYYY format
+-- PostgreSQL defaults to YYYY-MM-DD so altering this setting
+ALTER DATABASE employees_db SET datestyle TO "ISO, MDY";
